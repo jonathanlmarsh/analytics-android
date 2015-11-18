@@ -7,6 +7,7 @@ apply from: rootProject.file('gradle/android.gradle')
 dependencies {
   compile project(':analytics')
   compile project(':analytics-wear')
+  compile 'com.wootric:analytics-integration-wootric:0.1.1'
 }
 
 checkstyle {

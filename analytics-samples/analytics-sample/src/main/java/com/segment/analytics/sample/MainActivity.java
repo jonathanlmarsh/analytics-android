@@ -39,6 +39,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.segment.analytics.Analytics;
 import com.segment.analytics.StatsSnapshot;
+import com.wootric.androidsdk.Wootric;
 
 public class MainActivity extends Activity {
 
@@ -51,6 +52,15 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     initViews();
+  }
+
+  @Override protected void onResume() {
+    super.onResume();
+    Analytics.with(this).onIntegrationReady("Wootric", new Analytics.Callback<Wootric>() {
+      @Override public void onReady(Wootric instance) {
+        Toast.makeText(MainActivity.this, instance.toString(), Toast.LENGTH_LONG).show();
+      }
+    });
   }
 
   private void initViews() {

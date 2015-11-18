@@ -3,9 +3,9 @@ package com.segment.analytics.sample;
 import android.app.Application;
 import android.widget.Toast;
 import com.segment.analytics.Analytics;
+import com.wootric.analytics.android.integrations.wootric.WootricIntegration;
 
 public class SampleApp extends Application {
-
   private static final String ANALYTICS_WRITE_KEY = "l8v1ga655b";
 
   @Override public void onCreate() {
@@ -16,6 +16,7 @@ public class SampleApp extends Application {
     if (BuildConfig.DEBUG) {
       builder.logLevel(Analytics.LogLevel.VERBOSE);
     }
+    builder.use(WootricIntegration.FACTORY);
 
     // Set the initialized instance as a globally accessible instance.
     Analytics.setSingletonInstance(builder.build());
