@@ -7,6 +7,7 @@ apply from: rootProject.file('gradle/android.gradle')
 dependencies {
   compile project(':analytics')
   compile project(':analytics-wear')
+  compile 'com.segment.analytics.android.integrations:flurry:1.0.0'
 }
 
 checkstyle {
