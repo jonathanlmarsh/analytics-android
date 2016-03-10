@@ -7,6 +7,19 @@ apply from: rootProject.file('gradle/android.gradle')
 dependencies {
   compile project(':analytics')
   compile project(':analytics-wear')
+
+  compile('com.segment.analytics.android.integrations:google-analytics:1.0.0') {
+    transitive = true
+  }
+  compile('com.segment.analytics.android.integrations:mixpanel:1.0.0') {
+    transitive = true
+  }
+  compile('com.segment.analytics.android.integrations:flurry:1.0.0') {
+    transitive = true
+  }
+  compile('io.branch.segment.analytics.android.integrations:library:1.0.0-RELEASE') {
+    transitive = true
+  }
 }
 
 checkstyle {
